@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours.csproj": {}
+    "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours.csproj": {}
   },
   "projects": {
-    "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours.csproj": {
+    "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours.csproj",
+        "projectUniqueName": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours.csproj",
         "projectName": "MobileTrolleyTours",
-        "projectPath": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours.csproj",
+        "projectPath": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours.csproj",
         "packagesPath": "/Users/travis-mac/.nuget/packages/",
-        "outputPath": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/obj/",
+        "outputPath": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/travis-mac/.nuget/NuGet/NuGet.Config"
