@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Pi3+H/u2ea4crC3yGIrlFc0cyDvRc7oIkn4a4ORgv48=",
+  "Hash": "IMqRTUntyciTgr0Cm2DOGCe+F+vJwlmSPq1x+gdZRuY=",
   "Source": "MobileTrolleyTours",
   "BasePath": "_content/MobileTrolleyTours",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MobileTrolleyTours/wwwroot",
       "Source": "MobileTrolleyTours",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/obj/Debug/net6.0/scopedcss/bundle/MobileTrolleyTours.styles.css",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/obj/Debug/net6.0/scopedcss/bundle/MobileTrolleyTours.styles.css",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/obj/Debug/net6.0/scopedcss/bundle/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/obj/Debug/net6.0/scopedcss/bundle/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "MobileTrolleyTours.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/obj/Debug/net6.0/scopedcss/bundle/MobileTrolleyTours.styles.css"
+      "OriginalItemSpec": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/obj/Debug/net6.0/scopedcss/bundle/MobileTrolleyTours.styles.css"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/obj/Debug/net6.0/scopedcss/projectbundle/MobileTrolleyTours.bundle.scp.css",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/obj/Debug/net6.0/scopedcss/projectbundle/MobileTrolleyTours.bundle.scp.css",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/obj/Debug/net6.0/scopedcss/projectbundle/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/obj/Debug/net6.0/scopedcss/projectbundle/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "MobileTrolleyTours.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/obj/Debug/net6.0/scopedcss/projectbundle/MobileTrolleyTours.bundle.scp.css"
+      "OriginalItemSpec": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/obj/Debug/net6.0/scopedcss/projectbundle/MobileTrolleyTours.bundle.scp.css"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/bootstrap/bootstrap.min.css",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/bootstrap/bootstrap.min.css",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot/css/bootstrap/bootstrap.min.css"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/bootstrap/bootstrap.min.css.map",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot/css/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/FONT-LICENSE",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/FONT-LICENSE",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/FONT-LICENSE"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.eot"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.otf"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.svg"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.ttf"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.woff"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/ICON-LICENSE",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/ICON-LICENSE",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/ICON-LICENSE"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/README.md",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/open-iconic/README.md",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/README.md"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/site.css",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/css/site.css",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot/css/site.css"
     },
     {
-      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/favicon.ico",
+      "Identity": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/favicon.ico",
       "SourceId": "MobileTrolleyTours",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
+      "ContentRoot": "/Users/travis-mac/Development/MobileTrolleyTours/MobileTrolleyTours/wwwroot/",
       "BasePath": "_content/MobileTrolleyTours",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
