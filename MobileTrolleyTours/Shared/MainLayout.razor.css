@@ -4,8 +4,23 @@
     flex-direction: column;
 }
 
-main {
+/* adding h1 here moves the main-header-text to the left */
+main h1 {
     flex: 1;
+}
+
+.main-header {
+    padding: 40px;
+}
+
+.main-header-text {
+    text-align: left;
+    padding-left: 50px;
+}
+
+.main-header-book-tour {
+    text-align: right;
+    padding-right: 50px;
 }
 
 .sidebar {
