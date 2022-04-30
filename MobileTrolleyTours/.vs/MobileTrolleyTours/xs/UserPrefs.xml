@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{ECEB151C-E7B9-4535-BF71-76CD0D0449DA}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MobileTrolleyTours/Pages/Index.razor">
+    <Files>
+      <File FileName="MobileTrolleyTours/Pages/Index.razor" Line="16" Column="41" />
+      <File FileName="MobileTrolleyTours/Pages/Main/About.razor" Line="15" Column="2" />
+      <File FileName="MobileTrolleyTours/Pages/Main/TourSchedule.css" Line="37" Column="6" />
+      <File FileName="MobileTrolleyTours/_Imports.razor" Line="9" Column="26" />
+      <File FileName="MobileTrolleyTours/Shared/SurveyPrompt.razor" Line="12" Column="8" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MobileTrolleyTours" expanded="True">
+            <Node name="MobileTrolleyTours" expanded="True">
+              <Node name="Pages" expanded="True">
+                <Node name="Main" expanded="True" />
+              </Node>
+              <Node name="Shared" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.MobileTrolleyTours PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
