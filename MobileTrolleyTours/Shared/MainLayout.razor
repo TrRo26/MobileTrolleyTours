@@ -2,19 +2,38 @@
 
 <PageTitle>MobileTrolleyTours</PageTitle>
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+    <div class="row">
+        <div class="col">
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            <div class="page">
+                @*<div class="sidebar">
+                    <NavMenu />
+                </div>*@
+
+                <main>
+                    <div class="main-header top-row px-4">
+                        <h1 class="main-header-text">City of Mobile Trolley Tours</h1>
+                        <div class="main-header-book-tour">
+                            <a class="" href="https://www.gctbus.com/tours" target="_blank">Book a tour</a>
+                            <p>[ Tours booked through Gulf Coast Tours ]</p>
+                        </div>
+                    </div>
+
+                    <article class="content px-4">
+
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+
+                                @Body
+
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+
+                    </article>
+                </main>
+            </div>
+
         </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
-
+    </div>

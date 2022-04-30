@@ -1,24 +1,23 @@
 /* _content/MobileTrolleyTours/Pages/Main/About.razor.rz.scp.css */
 div[b-vnn9cxsq9o] {
-    color: red
+    
 }
-
 /* _content/MobileTrolleyTours/Pages/Main/ContactInfo.razor.rz.scp.css */
-body[b-wax63qhwhz] {
-}
+div[b-wax63qhwhz] {
 
+}
 /* _content/MobileTrolleyTours/Pages/Main/OtherTrips.razor.rz.scp.css */
-body[b-ppfysncijn] {
-}
+div[b-ppfysncijn] {
 
+}
 /* _content/MobileTrolleyTours/Pages/Main/RouteHighlights.razor.rz.scp.css */
-body[b-nwfzf6ha6y] {
-}
+div[b-nwfzf6ha6y] {
 
+}
 /* _content/MobileTrolleyTours/Pages/Main/StartLocations.razor.rz.scp.css */
-body[b-kiom6ixmtw] {
-}
+div[b-kiom6ixmtw] {
 
+}
 /* _content/MobileTrolleyTours/Pages/Main/TourSchedule.razor.rz.scp.css */
 .tg[b-f4ucs206qy] {
     border-collapse: collapse;
@@ -64,8 +63,22 @@ body[b-kiom6ixmtw] {
     flex-direction: column;
 }
 
-main[b-5a9guull1n] {
+main h1[b-5a9guull1n] {
     flex: 1;
+}
+
+.main-header[b-5a9guull1n] {
+    padding: 40px;
+}
+
+.main-header-text[b-5a9guull1n] {
+    text-align: left;
+    padding-left: 30px;
+}
+
+.main-header-book-tour[b-5a9guull1n] {
+    text-align: right;
+    padding-right: 30px;
 }
 
 .sidebar[b-5a9guull1n] {
