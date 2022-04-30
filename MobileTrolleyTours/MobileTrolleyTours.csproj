@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Pages\Main\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\Main\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Pages\Main\TourSchedule.css.razor" />
+  </ItemGroup>
+</Project>
