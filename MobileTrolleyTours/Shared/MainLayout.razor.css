@@ -13,6 +13,11 @@ main h1 {
     padding: 40px;
 }
 
+.main-header-image {
+    width: 10% !important;
+    padding-left: 50px;
+}
+
 .main-header-text {
     text-align: left;
     padding-left: 50px;

@@ -11,8 +11,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\Main\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Pages\Main\TourSchedule.css.razor" />
+    <Content Remove="wwwroot\images\" />
   </ItemGroup>
 </Project>

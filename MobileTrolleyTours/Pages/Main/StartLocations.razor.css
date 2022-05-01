@@ -1,3 +1,7 @@
-﻿div {
+﻿.main-text {
+    padding: 15px;
+}
 
+.card > img {
+    padding: 30px;
 }
