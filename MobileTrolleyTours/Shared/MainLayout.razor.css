@@ -4,30 +4,6 @@
     flex-direction: column;
 }
 
-/* adding h1 here moves the main-header-text to the left */
-main h1 {
-    flex: 1;
-}
-
-.main-header {
-    padding: 40px;
-}
-
-.main-header-image {
-    width: 10% !important;
-    padding-left: 50px;
-}
-
-.main-header-text {
-    text-align: left;
-    padding-left: 50px;
-}
-
-.main-header-book-tour {
-    text-align: right;
-    padding-right: 50px;
-}
-
 .sidebar {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
 }

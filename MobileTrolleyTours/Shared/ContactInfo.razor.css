@@ -1,3 +1,11 @@
-﻿div {
+﻿.contact-info-container {
 
+}
+
+.contact-info {
+    color: black;
+}
+
+.contact-info li {
+    background-color: #f1f1f1;
 }
