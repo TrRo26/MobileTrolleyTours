@@ -1,23 +1,44 @@
 ﻿@page "/"
 
-<PageTitle>Mobile Trolley Tours</PageTitle>
+@*<PageTitle>Mobile Trolley Tours</PageTitle>*@
 
-<About />
+<div class="row">
+    <div class="col-4">
+        <StartLocations />
+    </div>
 
-<StartLocations />
+    <div class="col-8">
+        <About />
+    </div>
+</div>
 
-<TourSchedule />
+<div class="row">
+    <TourSchedule />
+</div>
 
-<RouteHighlights />
+<div class="row">
+    <div class="col-4">
+        <Pricing />
+    </div>
+    <div class="col-8">
+        <RouteHighlights />
+    </div>
+</div>
 
-<OtherTrips />
+<div class="row">
+    <div>
+        <OtherTrips />
+    </div>
+</div>
 
 <div>
     <h3>Groups</h3>
     <p>For parties of 10 or more, please call our office for prices. Special pricing and times can be accommodated for your group.</p>
 </div>
 
-<Questions />
+<div>
+    <Questions />
+</div>
 
 <div>
     <p>Our wheel chair lift is available by request only</p>

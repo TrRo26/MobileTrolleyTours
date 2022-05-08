@@ -1,114 +1,65 @@
-﻿<div class="component-wrapper">
-    <h2>Route Highlights</h2>
+﻿@*https://www.bootdey.com/snippets/view/bs4-schedule-list*@
 
-    <div class="list-group">
-        <a class="list-group-item list-group-item-action" aria-current="true">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 list-item">Colonial Fort Condé</h5>
-                <small>3 days ago</small>
+<div class="component-wrapper">
+    <div class="container py-7 route-highlights-container">
+        <h2 class="text-uppercase text-letter-spacing-xs my-0 font-weight-bold route-header">
+            Route Highlights
+        </h2>
+        @*<p class="text-sm text-dark mt-0 mb-5">Just some of the tour highlights</p>*@
+        <!-- Days -->
+        <div class="row">
+            <div class="col-lg-6 mb-3">
+                @*<h4 class="mt-0 mb-3 text-dark op-8 font-weight-bold">
+                    Friday, Nov 13th
+                </h4>*@
+                <ul class="list-timeline list-timeline-primary">
+                    <li class="list-timeline-item p-0 pb-3 pb-lg-4 d-flex flex-wrap flex-column">
+                        <p class="my-0 text-dark flex-fw text-sm text-uppercase"><span class="text-inverse op-8">Colonial Fort Condé</span></p>
+                    </li>
+                    <li class="list-timeline-item p-0 pb-3 pb-lg-4 d-flex flex-wrap flex-column" data-toggle="collapse" data-target="#day-1-item-2">
+                        <p class="my-0 text-dark flex-fw text-sm text-uppercase"><span class="text-inverse op-8">Church Street Cemetery</span></p>
+                    </li>
+                    <li class="list-timeline-item p-0 pb-3 pb-lg-4 d-flex flex-wrap flex-column">
+                        <p class="my-0 text-dark flex-fw text-sm text-uppercase"><span class="text-inverse op-8">Callahan's Irish Bar / Washington Square</span></p>
+                    </li>
+                    <li class="list-timeline-item p-0 pb-3 pb-lg-4 d-flex flex-wrap flex-column" data-toggle="collapse" data-target="#day-1-item-4">
+                        <p class="my-0 text-dark flex-fw text-sm text-uppercase"><span class="text-inverse op-8">Oakleigh Historic Complex</span></p>
+                    </li>
+                    <li class="list-timeline-item p-0 pb-3 pb-lg-4 d-flex flex-wrap flex-column">
+                        <p class="my-0 text-dark flex-fw text-sm text-uppercase"><span class="text-inverse op-8">Carnival Museum</span></p>
+                    </li>
+                    <li class="list-timeline-item p-0 pb-3 pb-lg-4 d-flex flex-wrap flex-column" data-toggle="collapse" data-target="#day-1-item-6">
+                        <p class="my-0 text-dark flex-fw text-sm text-uppercase"><span class="text-inverse op-8">Gulf Quest/AL Cruise and Convention Center</span></p>
+                    </li>
+                </ul>
             </div>
-            @*<p class="mb-1">Some placeholder content in a paragraph.</p>*@
-            @*<small>And some small print.</small>*@
-        </a>
+            <div class="col-lg-6 mb-3">
+                @*<h4 class="mt-0 mb-3 text-dark op-8 font-weight-bold">
+                    Saturday, Nov 14th
+                </h4>*@
+                <ul class="list-timeline list-timeline-primary">
+                    <li class="list-timeline-item p-0 pb-3 d-flex flex-wrap flex-column">
+                        <p class="my-0 text-dark flex-fw text-sm text-uppercase"><span class="text-inverse op-8">Battle House Hotel</span></p>
+                    </li>
+                    <li class="list-timeline-item p-0 pb-3 pb-lg-4 d-flex flex-wrap flex-column" data-toggle="collapse" data-target="#day-2-item-2">
+                        <p class="my-0 text-dark flex-fw text-sm text-uppercase"><span class="text-inverse op-8">Richard's DAR House</span></p>
+                    </li>
+                    <li class="list-timeline-item p-0 pb-3 pb-lg-4 d-flex flex-wrap flex-column">
+                        <p class="my-0 text-dark flex-fw text-sm text-uppercase"><span class="text-inverse op-8">Agrican American Museum</span></p>
+                    </li>
+                    <li class="list-timeline-item p-0 pb-3 pb-lg-4 d-flex flex-wrap flex-column" data-toggle="collapse" data-target="#day-2-item-4">
+                        <p class="my-0 text-dark flex-fw text-sm text-uppercase"><span class="text-inverse op-8">Cathedral</span></p>
+                    </li>
+                    <li class="list-timeline-item p-0 pb-3 pb-lg-4 d-flex flex-wrap flex-column">
+                        <p class="my-0 text-dark flex-fw text-sm text-uppercase"><span class="text-inverse op-8">Beinville Square</span></p>
+                    </li>
+                    <li class="list-timeline-item p-0 pb-3 pb-lg-4 d-flex flex-wrap flex-column" data-toggle="collapse" data-target="#day-2-item-6">
+                        <p class="my-0 text-dark flex-fw text-sm text-uppercase"><span class="text-inverse op-8">USS Alabama</span></p>
+                    </li>
+                </ul>
+            </div>
 
-        <a class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 list-item">Church Street Cemetery</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            @*<p class="mb-1">Some placeholder content in a paragraph.</p>*@
-            @*<small class="text-muted">And some muted small print.</small>*@
-        </a>
-
-        <a class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 list-item">Callahan's Irish Bar / Washington Square</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            @*<p class="mb-1">Some placeholder content in a paragraph.</p>*@
-            @*<small class="text-muted">And some muted small print.</small>*@
-        </a>
-
-        <a class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 list-item">Oakleigh Historic Complex</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            @*<p class="mb-1">Some placeholder content in a paragraph.</p>*@
-            @*<small class="text-muted">And some muted small print.</small>*@
-        </a>
-
-        <a class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 list-item">Carnival Museum</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            @*<p class="mb-1">Some placeholder content in a paragraph.</p>*@
-            @*<small class="text-muted">And some muted small print.</small>*@
-        </a>
-
-        <a class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 list-item">Gulf Quest/AL Cruise and Convention Center</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            @*<p class="mb-1">Some placeholder content in a paragraph.</p>*@
-            @*<small class="text-muted">And some muted small print.</small>*@
-        </a>
-
-        <a class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 list-item">Battle House Hotel</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            @*<p class="mb-1">Some placeholder content in a paragraph.</p>*@
-            @*<small class="text-muted">And some muted small print.</small>*@
-        </a>
-
-        <a class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 list-item">Richard's DAR House</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            @*<p class="mb-1">Some placeholder content in a paragraph.</p>*@
-            @*<small class="text-muted">And some muted small print.</small>*@
-        </a>
-
-        <a class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 list-item">Agrican American Museum</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            @*<p class="mb-1">Some placeholder content in a paragraph.</p>*@
-            @*<small class="text-muted">And some muted small print.</small>*@
-        </a>
-
-        <a class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 list-item">Cathedral</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            @*<p class="mb-1">Some placeholder content in a paragraph.</p>*@
-            @*<small class="text-muted">And some muted small print.</small>*@
-        </a>
-
-        <a class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 list-item">Beinville Square</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            @*<p class="mb-1">Some placeholder content in a paragraph.</p>*@
-            @*<small class="text-muted">And some muted small print.</small>*@
-        </a>
-
-        <a class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 list-item">USS Alabama</h5>
-                <small class="text-muted">3 days ago</small>
-            </div>
-            @*<p class="mb-1">Some placeholder content in a paragraph.</p>*@
-            @*<small class="text-muted">And some muted small print.</small>*@
-        </a>
+        </div>
     </div>
 
 </div>

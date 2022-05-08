@@ -1,3 +1,7 @@
-﻿.about-text {
+﻿.component-wrapper {
+    padding-left: 80px;
+}
+
+.about-text {
     line-height: 160%;
 }

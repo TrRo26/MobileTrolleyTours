@@ -1,0 +1,19 @@
+﻿.main-headline {
+    color: #1a4954;
+}
+
+.button {
+    border: 1px solid #1a4954;
+    color: white;
+}
+
+#button-container a {
+    text-transform: uppercase !important;
+    border: 1px solid #1a4954;
+    color: #1a4954;
+}
+
+    #button-container a:hover {
+        background-color: #1a4954;
+        color: white;
+    }

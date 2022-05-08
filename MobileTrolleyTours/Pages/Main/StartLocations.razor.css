@@ -1,7 +1,12 @@
-﻿.main-text {
+﻿.card {
+    width: 18rem;
+    margin-bottom: 30px;
+}
+
+.main-text {
     padding: 15px;
 }
 
 .card > img {
-    padding: 30px;
+/*    padding: 30px;*/
 }

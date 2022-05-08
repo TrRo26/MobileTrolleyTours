@@ -1,12 +1,18 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
 .component-wrapper {
-    padding-top: 50px;
+    padding-top: 80px;
 }
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 335;
 }
+
+/*.pricing-highlights {
+    padding-top: 80px;
+}*/
 
 h1:focus {
     outline: none;
