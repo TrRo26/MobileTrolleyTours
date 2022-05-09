@@ -6,14 +6,25 @@
 }
 
 .center-container {
-    height: 200px;
+    margin-top: 30px;
+    height: 100px;
 }
 
 .right-container {
 
 }
 
+.badge-container {
+    margin-right: 40px;
+}
+
+.visit-badge-image,
 .trolley-badge-image {
     max-height: 100%;
     max-width: 100%;
+}
+
+.visit-badge-image {
+    border-radius: 50%;
+    border: 1px solid black;
 }

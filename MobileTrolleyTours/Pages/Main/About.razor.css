@@ -5,3 +5,13 @@
 .about-text {
     line-height: 160%;
 }
+
+.about-intro {
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+
+.yellow-accent {
+    color: #ffca0b;
+    font-size: 30px;
+}
