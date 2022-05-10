@@ -1,10 +1,14 @@
-﻿.main-text {
-    padding: 15px;
+﻿.component-wrapper {
+    padding-top: 140px;
+}
+
+.main-text {
+    padding-right: 25px;
     color: #1a4954;
 }
 
 .card {
-    width: 18rem;
+    width: 20rem;
     margin-bottom: 30px;
 }
 

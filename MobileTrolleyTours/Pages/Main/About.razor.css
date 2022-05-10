@@ -1,14 +1,24 @@
 ﻿.component-wrapper {
-    padding-left: 80px;
-}
 
-.about-text {
-    line-height: 160%;
 }
 
 .about-intro {
-    font-size: 40px;
-    padding-bottom: 10px;
+    border-top: 3px solid #ffca0b;
+    border-bottom: 3px solid #ffca0b;
+    text-align: center;
+    padding-top: 25px;
+    font-weight: 400;
+}
+
+    .about-intro span {
+        font-size: 40px;
+        line-height: 130%;
+        color: #1a4954;
+    }
+
+.about-text {
+    line-height: 160%;
+    padding-left: 20px;
 }
 
 .yellow-accent {

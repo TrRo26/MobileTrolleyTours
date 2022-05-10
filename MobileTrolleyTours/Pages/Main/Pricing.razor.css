@@ -1,5 +1,9 @@
-﻿.groups {
-    font-size: small;
+﻿.spacer {
+    padding-top: 10px;
+}
+
+.groups {
+    font-size: 15px;
     font-style: italic;
 }
 
@@ -194,8 +198,9 @@ p.price span {
         content: "$";
         font-size: 20px;
         top: 25px;
-        font-weight: 300;
+        font-weight: 500;
         left: 0;
+        color: #1a4954;
     }
 
 .pricing-offers {
