@@ -28,3 +28,15 @@
     border-radius: 50%;
     border: 1px solid black;
 }
+
+.sub-footer {
+    font-size: small;
+}
+
+@media (max-width: 576px) {
+    .visit-badge-image,
+    .trolley-badge-image {
+        max-height: 50%;
+        max-width: 50%;
+    }
+}

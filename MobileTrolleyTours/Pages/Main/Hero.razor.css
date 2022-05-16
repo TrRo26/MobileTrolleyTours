@@ -25,3 +25,10 @@
         background-color: #1a4954;
         color: white;
     }
+
+.sm > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

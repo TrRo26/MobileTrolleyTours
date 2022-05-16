@@ -1,24 +1,45 @@
-﻿<div class="component-wrapper">
-    <h3>Questions?</h3>
-    <button type="button" data-bs-toggle="modal" data-bs-target="#myModal">Submit them here</button>
-</div>
+﻿<div>
 
-<div id="myModal" class="modal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+    <div class="row component-wrapper">
+
+        <div class="col-lg-3 col-md-6"></div>
+
+        <div class="col-lg-9 col-md-10 questions-container">
+            <h3>Have questions?</h3>
+            <a href="mailto: www.gctbus.com">Send us an email</a>
         </div>
+
+        @*<button type="button" data-bs-toggle="modal" data-bs-target="#questionsModal">Submit them here</button>*@
+
+        @*<div id="questionsModal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Have questions?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="mb-3">
+                            <label for="formEmailInput" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="formEmailInput" placeholder="myemail@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formQuestionInput" class="form-label">How can we help?</label>
+                            <input type="text" class="form-control" id="formQuestionInput" placeholder="???">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
     </div>
+
 </div>
 
 @code {

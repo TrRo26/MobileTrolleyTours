@@ -1,3 +1,16 @@
-﻿.list-group-item > img {
+﻿.component-wrapper {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.list-group-item > img {
     max-height: 40px;
 }
+
+@media (max-width: 576px) {
+    .list-group-item span {
+        margin-left: -30px;
+        font-size: 16px;
+    }
+}
+

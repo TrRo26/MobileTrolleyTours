@@ -1,3 +1,30 @@
-﻿.handicap {
-    margin-right: 30px;
+﻿.card {
+    border: none;
+    text-align: center;
+}
+
+.card-body > h5 {
+    font-size: 15px;
+}
+
+.card-body > h6 {
+    font-size: 13px;
+}
+
+.one {
+    padding-top: 23px;
+}
+
+.two h5 {
+    padding-left: 30px;
+}
+
+@media (max-width: 576px) {
+    .card {
+        max-width: 50%;
+    }
+
+    .two h5 {
+        padding-left: 0px;
+    }
 }

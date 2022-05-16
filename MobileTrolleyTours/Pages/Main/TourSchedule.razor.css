@@ -8,3 +8,21 @@
     background-color: #1a4954 !important;
     /*    border: 1px solid #1a4954;*/
 }
+
+.mobile-view {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .one {
+    }
+
+    .mobile-view {
+/*        margin-top: -45px;*/
+        display: flex;
+    }
+
+    .desktop-view {
+        display: none;
+    }
+}

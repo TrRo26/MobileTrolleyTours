@@ -7,6 +7,10 @@
     color: #1a4954;
 }
 
+.mobile-view {
+    display: none;
+}
+
 .card {
     width: 20rem;
     margin-bottom: 30px;
@@ -39,3 +43,18 @@ a {
     a:hover::before {
         transform: scaleX(1);
     }
+
+@media (max-width: 576px) {
+    .one {
+ 
+    }
+
+    .mobile-view {
+        margin-top: -45px;
+        display: flex;
+    }
+
+    .desktop-view {
+        display: none;
+    }
+}
