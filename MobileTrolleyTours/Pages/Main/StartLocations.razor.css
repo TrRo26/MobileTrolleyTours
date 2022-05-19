@@ -83,8 +83,9 @@ a {
     }
 
 @media (max-width: 576px) {
-    .one {
- 
+
+    .component-wrapper {
+        padding-top: 25px;
     }
 
     .mobile-view {
