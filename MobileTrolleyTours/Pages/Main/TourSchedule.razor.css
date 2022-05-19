@@ -9,20 +9,27 @@
     /*    border: 1px solid #1a4954;*/
 }
 
-.mobile-view {
-    display: none;
-}
-
-@media (max-width: 576px) {
-    .one {
+@media screen and (max-width: 576px) {
+    th {
+        font-size: 16px;
     }
 
-    .mobile-view {
-/*        margin-top: -45px;*/
+    td {
+        font-size: 14px;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table td {
         display: flex;
     }
 
-    .desktop-view {
-        display: none;
-    }
+        table td::before {
+            content: attr(label);
+            font-weight: bold;
+            width: 120px;
+            min-width: 120px;
+        }
 }
