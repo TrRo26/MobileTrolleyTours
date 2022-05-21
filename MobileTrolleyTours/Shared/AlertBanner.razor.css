@@ -1,0 +1,32 @@
+﻿/*
+REMEMBER TO REMOVE .alert-banner-padding in Hero component when removing banner
+*/
+
+.nav-wrapper {
+    width: 100%;
+    position: fixed;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    z-index: 100;
+}
+
+.nav {
+    padding: 8px;
+    background-color: indianred;
+}
+
+    .nav span {
+        font-weight: bold;
+    }
+
+p {
+    margin-bottom: 3px;
+}
+
+@media screen and (max-width: 576px) {
+    .nav {
+        padding-left: 60px;
+        padding-right: 60px;
+        font-size: 12px;
+    }
+}
