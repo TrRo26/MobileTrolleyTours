@@ -32,6 +32,9 @@
 
     <script autostart="false" src="_framework/blazor.server.js"></script>
 
+    @*Suggested fix for browser reconnect issue
+    https://stackoverflow.com/questions/60031791/how-to-deploy-blazor-server-in-production-and-overcome-signalr-re-connection-pro/60031891#60031891*@
+
     <script>async function connectionDown(options) {
             console.log("Connection Down - you could do some UI here...");
             for (let i = 0; i < options.maxRetries; i++) {

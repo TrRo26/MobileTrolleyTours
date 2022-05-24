@@ -11,7 +11,6 @@
 }
 
 .right-container {
-
 }
 
 .badge-container {
@@ -33,10 +32,29 @@
     font-size: small;
 }
 
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
     .visit-badge-image,
     .trolley-badge-image {
         max-height: 50%;
         max-width: 50%;
+    }
+
+    .badge-container {
+        margin-right: 0px;
+    }
+
+    .left-container {
+        display: none;
+    }
+
+    .center-container {
+        display: block;
+        margin-top: 30px;
+        height: 50px;
+    }
+
+    .right-container {
+        display: block;
+        font-size: 12px;
     }
 }
