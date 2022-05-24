@@ -45,6 +45,8 @@ a {
     }
 
 .bi-asterisk {
+    display: block;
+    margin: auto;
     width: 45px;
     height: 45px;
     padding-bottom: 15px;
@@ -53,10 +55,10 @@ a {
 .c-box {
     background: #1a4954;
     font-size: 150%;
-    text-align: center;
+    text-align: left;
     color: #fff;
     flex-basis: 30%;
-    padding: 5vmin;
+    padding: 3vmin;
     opacity: 70%;
     border-radius: 3px;
 }
@@ -113,6 +115,7 @@ a {
     }
 
     .main-text {
+        text-align: center;
         padding-right: 25px;
         color: white;
         font-size: 20px;

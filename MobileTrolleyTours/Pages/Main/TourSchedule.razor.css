@@ -13,6 +13,10 @@ table-header {
 }
 
 @media screen and (max-width: 576px) {
+    .component-wrapper {
+        padding-top: 20px;
+    }
+
     th {
         font-size: 16px;
     }
@@ -32,8 +36,8 @@ table-header {
         table td::before {
             content: attr(label);
             font-weight: bold;
-            width: 120px;
-            min-width: 120px;
+            width: 100px;
+            min-width: 100px;
         }
 
     table tbody th > span {
