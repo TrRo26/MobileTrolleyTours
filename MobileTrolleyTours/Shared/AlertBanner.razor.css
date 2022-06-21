@@ -23,6 +23,21 @@ p {
     margin-bottom: 3px;
 }
 
+button {
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+button:hover {
+    background-color: #1a4954;
+    color: white;
+}
+
 @media screen and (max-width: 576px) {
     .nav {
         padding-left: 30px;

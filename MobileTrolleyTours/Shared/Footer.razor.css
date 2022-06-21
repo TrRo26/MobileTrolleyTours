@@ -1,5 +1,8 @@
 ﻿footer-container {
-/*    max-height: 50%*/
+}
+
+.mobile {
+    display: none;
 }
 
 .left-container {
@@ -33,14 +36,25 @@
 }
 
 @media screen and (max-width: 576px) {
+    .desktop {
+        display: none !important;
+    }
+
+    .mobile {
+        display: block;
+    }
+
     .visit-badge-image,
     .trolley-badge-image {
-        max-height: 50%;
-        max-width: 50%;
+        max-height: 90%;
+        max-width: 90%;
     }
 
     .badge-container {
+        text-align: center;
+        display: inline;
         margin-right: 0px;
+        height: 100px;
     }
 
     .left-container {

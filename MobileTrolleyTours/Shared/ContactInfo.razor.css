@@ -1,11 +1,23 @@
 ﻿.contact-info-container {
-
+    display: inline-block;
 }
 
 .contact-info {
+    display: inline-block;
     color: black;
+    font-size: 14px;
 }
 
 .contact-info li {
     background-color: #f1f1f1;
+}
+
+@media screen and (max-width: 576px) {
+    .mobile {
+        display: none !important;
+    }
+
+    .contact-info span {
+/*        left: 50px;*/
+    }
 }

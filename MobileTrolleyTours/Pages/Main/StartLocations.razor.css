@@ -105,7 +105,7 @@ a {
         bottom: -10px;
     }
 
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
     .component-wrapper {
         padding-top: 25px;
     }
@@ -148,7 +148,7 @@ a {
     }
 
     .card-text {
-        display:block;
+        display: block;
         font-size: 12px;
         line-height: 1.2;
     }
