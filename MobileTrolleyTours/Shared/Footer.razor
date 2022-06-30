@@ -42,16 +42,16 @@
 
                 @*mobile*@
                 @*<div class="row center-container mobile">
-                    <div class="mobile center-container">
-                        <div class="col-md-5 badge-container">
-                            <img src="images/visit_mobile_badge_2.png" class="visit-badge-image rounded-circle" />
+                        <div class="mobile center-container">
+                            <div class="col-md-5 badge-container">
+                                <img src="images/visit_mobile_badge_2.png" class="visit-badge-image rounded-circle" />
+                            </div>
+                            <div class="col-md-5 badge-container">
+                                <img src="images/gctht_no_bg.png" class="trolley-badge-image" />
+                            </div>
+                            <div class="col-md-1"></div>
                         </div>
-                        <div class="col-md-5 badge-container">
-                            <img src="images/gctht_no_bg.png" class="trolley-badge-image" />
-                        </div>
-                        <div class="col-md-1"></div>
-                    </div>
-                </div>*@
+                    </div>*@
 
                 <div class="row">
                     <div class="col-6 badge-container">
@@ -69,27 +69,35 @@
 
         </div>
 
-            <div class="text-center text-dark p-3 sub-footer" style="background-color: rgba(0, 0, 0, 0.2);">
-                <div>
-                    <span>
-                        <a href="https://www.flaticon.com/free-icons/carnival" title="carnival">Carnival</a>
-                        &
-                        <a href="https://www.flaticon.com/free-icons/poker" title="poker icons">Poker</a>
-                        icons created by Freepik - Flaticon
-                    </span>
-                </div>
-                <div>
-
-                </div>
-                <div>
-                    © 2022 Copyright:
-                    <a class="text-dark" href="http://www.travisaroy.com/">Arthur Clevenger & Travis Roy</a>
-                </div>
+        <div class="text-center text-dark p-3 sub-footer" style="background-color: rgba(0, 0, 0, 0.2);">
+            <div>
+                <span>
+                    <a href="https://www.flaticon.com/free-icons/carnival" title="carnival">Carnival</a>
+                    &
+                    <a href="https://www.flaticon.com/free-icons/poker" title="poker icons">Poker</a>
+                    icons created by Freepik - Flaticon
+                </span>
             </div>
+            <div>
+
+            </div>
+            <div>
+                © 2022 Copyright:
+                <a class="text-dark" href="http://www.travisaroy.com/">Arthur Clevenger & Travis Roy</a>
+            </div>
+        </div>
+        <div><a href="" id="admin">admin</a></div>
     </footer>
 </div>
 
 
 @code {
 
-}
+        // LEFT OFF HERE - TRYING TO GET THIS TO TRIGGER ON CLICK AND RUN CODE IN MODELS - IE QUERY AZURE STORAGE ACCOUNT FOR SCHEDULE CHANGES
+        MobileTrolleyTours.Models.TourScheduleChanges result = new MobileTrolleyTours.Models.TourScheduleChanges(new FileUploader.Models.AzureStorageConfig
+        {
+            ConnectionString = "",
+            FileContainerName = ""
+        });
+
+    }
