@@ -458,3 +458,7 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+#Travis Added
+*.config
+*/MobileTrolleyTours/Models/AzureStorageConfig.cs

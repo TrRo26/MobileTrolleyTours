@@ -10,7 +10,7 @@
   "profiles": {
     "MobileTrolleyTours": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
+      //"dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7195;http://localhost:5073",
       "environmentVariables": {
@@ -26,5 +26,3 @@
     }
   }
 }
-
-

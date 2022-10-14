@@ -93,11 +93,53 @@
 
 @code {
 
-        // LEFT OFF HERE - TRYING TO GET THIS TO TRIGGER ON CLICK AND RUN CODE IN MODELS - IE QUERY AZURE STORAGE ACCOUNT FOR SCHEDULE CHANGES
-        MobileTrolleyTours.Models.TourScheduleChanges result = new MobileTrolleyTours.Models.TourScheduleChanges(new FileUploader.Models.AzureStorageConfig
-        {
-            ConnectionString = "",
-            FileContainerName = ""
-        });
+    // ALL TEST CODE FOR SCHEDULE ALERT AZURE TABLE STORAGE
 
-    }
+    TestForCodeBlock runClass = new TestForCodeBlock();
+
+    class TestForCodeBlock
+    {
+        public TestForCodeBlock()
+        {
+
+            var newScheduleChange = new ScheduleAlertDetails
+            {
+                StartDate = DateTimeOffset.Parse("2018-04-01"),
+                EndDate = null,
+                Description = $"You'll have to find your tour elsewhere cause it ain't here.",
+                ApplyDate = DateTimeOffset.Parse("2022-11-26"),
+                RevokeDate = DateTimeOffset.Parse("2022-11-27"),
+                Status = ScheduleAlertStatus.Inactive
+            };
+
+            var scheduleManager = new MobileTrolleyTours.Data.ScheduleAlertManager();
+
+            var id = scheduleManager.AddScheduleAlertItem(newScheduleChange);
+
+
+
+            string tableName = "TourScheduleChanges";
+            //bool initialized = MobileTrolleyTours.Data.TableStorageManager.Initialize(tableName);
+
+            string partitionKey = "TourSchedule";
+            string rowKey = "c3795334-adc3-43bb-9f75-9c86e79d8a03";
+            string rowKeyDelete = "NoticeOne";
+
+            List<ScheduleAlertDetails> results = scheduleManager.GetScheduleAlertsByPartitionKey(partitionKey);
+
+            //var test = results.FirstOrDefault();
+
+            //Azure.Data.Tables.TableEntity result = MobileTrolleyTours.Data.TableStorageManager.GetEntityByRowKey(rowKey);
+            //var testTwo = result.FirstOrDefault().Value;
+
+
+
+            //int deleteResult = MobileTrolleyTours.Data.TableStorageManager.DeleteEntityByRowKey(rowKeyDelete);
+
+            //Azure.Data.Tables.TableEntity updateResult = MobileTrolleyTours.Data.TableStorageManager.UpdateEntityByRowKey("");
+
+            string breakpoint = "";
+        }
+    };
+
+}
