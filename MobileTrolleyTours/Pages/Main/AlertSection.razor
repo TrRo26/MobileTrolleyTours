@@ -1,38 +1,56 @@
-﻿<div id="sched-changes" class="nav-wrapper">
+﻿@using System.Linq;
+@using MobileTrolleyTours.Data;
+@using MobileTrolleyTours.Models.Enums;
+
+<div id="sched-changes" class="nav-wrapper">
     <ul class="nav justify-content-center">
         <li class="changes">
 
             @*<p>
-                Please note that The Mobile Historic Trolley Tours will be taking our <span>
-                    August Hiatus
-                    starting on the 30th of July
-                </span> and <span>resuming on the 6th of September</span>.
                 There will be no tours during this time <span class="white-text">*</span>.
                 <br />
-            <p class="footnote"><span class="white-text">*</span> Some dates will be available for group or event tours. Please call 251-633-0560 x5 for details.</p>
+                <p class="footnote"><span class="white-text">*</span> Some dates will be available for group or event tours. Please call 251-633-0560 x5 for details.</p>
             </p>*@
 
-            <p>
-                <ul>
-                    <li>
-                        On <span>Saturday, October 22nd</span> tours<span> WILL NOT</span> be operating.
-                    </li>
-                    <br />
-                    <li>
-                        From <span>Monday, November 21st through Monday, November 28th</span> tours<span> WILL NOT</span> be operating due to the Thanksgiving holiday.
-                    </li>
-                </ul>
+            <p class="alert-box-header">
+                @GetAlertBoxHeader().Description;
             </p>
 
-        @*<p>Please note these changes to the regularly scheduled tours. Tours <span>WILL NOT</span> be operating on the following dates/times:</p>*@
-        @*<ul>
-            <li>
-                The Mobile Historic Trolley Tours will be taking our <span>August Hiatus
-                starting on the 30th of July</span> and <span>resuming on the 6th of September</span>. There will be no tours during this time <span class="white-text">*</span>.
-            </li>
-            <br>
-            <span class="white-text">*</span> Some dates will be available for group or event tours. Please call 251-633-0560 x5 for details.
-        </ul>*@
+            <p class="alert-box-sub-header footnote">
+                @GetAlertBoxSubHeader().Description;
+            </p>
+
+            <tr>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Notice</th>
+            </tr>
+
+            @{
+                var alerts = GetActiveAlerts();
+
+                @foreach (var alert in alerts)
+                {
+                    <tr class="alert-box-item">
+                        <td>
+                            <p>@String.Format("{0:dddd, MMMM d, yyyy}", alert.StartDate)</p>
+                        </td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(alert.EndDate.ToString()))
+                            {
+                                <p>@String.Format("{0:dddd, MMMM d, yyyy}", alert.EndDate)</p>
+                            }
+                        </td>
+                        <td>
+                            <p>@alert.Description</p>
+                        </td>
+                    </tr>
+                }
+
+                <p class="alert-box-footer footnote">
+                    @GetAlertBoxFooter().Description;
+                </p>
+            }
 
         </li>
     </ul>
@@ -40,4 +58,34 @@
 
 @code {
 
-}
+    ScheduleAlertService scheduleManager = new MobileTrolleyTours.Data.ScheduleAlertService();
+
+    public ScheduleChangeData GetAlertBoxHeader()
+    {
+        var alertBoxHeader = scheduleManager.GetScheduleChangeData(PartitionKeys.AlertBoxHeader, ScheduleAlertStatus.Active);
+
+        return alertBoxHeader.FirstOrDefault();
+    }
+
+    public ScheduleChangeData GetAlertBoxSubHeader()
+    {
+        var alertBoxSubHeader = scheduleManager.GetScheduleChangeData(PartitionKeys.AlertBoxSubHeader, ScheduleAlertStatus.Active);
+
+        return alertBoxSubHeader.FirstOrDefault();
+    }
+
+    public List<ScheduleChangeData> GetActiveAlerts()
+    {
+        var alerts = scheduleManager.GetScheduleChangeData(PartitionKeys.AlertBoxItem, ScheduleAlertStatus.Active);
+
+        return alerts;
+    }
+
+    public ScheduleChangeData GetAlertBoxFooter()
+    {
+        var alertBoxFooter = scheduleManager.GetScheduleChangeData(PartitionKeys.AlertBoxFooter, ScheduleAlertStatus.Active);
+
+        return alertBoxFooter.FirstOrDefault();
+    }
+
+    }

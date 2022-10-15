@@ -13,11 +13,13 @@
     <None Remove="Models\" />
     <None Remove="Azure.Storage.Blobs" />
     <None Remove="Azure.Data.Tables" />
+    <None Remove="Models\Enums\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\Main\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="Models\" />
+    <Folder Include="Models\Enums\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Pages\Main\TourSchedule.css.razor" />

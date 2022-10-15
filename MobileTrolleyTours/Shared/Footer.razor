@@ -1,4 +1,6 @@
-﻿<div class="footer-container">
+﻿@using MobileTrolleyTours.Models.Enums;
+
+<div class="footer-container">
     <footer class="text-white" style="background-color: #f1f1f1;">
 
         <div class="container pt-4">
@@ -93,8 +95,6 @@
 
 @code {
 
-    // ALL TEST CODE FOR SCHEDULE ALERT AZURE TABLE STORAGE
-
     TestForCodeBlock runClass = new TestForCodeBlock();
 
     class TestForCodeBlock
@@ -102,43 +102,18 @@
         public TestForCodeBlock()
         {
 
-            var newScheduleChange = new ScheduleAlertDetails
+            var newScheduleChange = new ScheduleChangeData
             {
-                StartDate = DateTimeOffset.Parse("2018-04-01"),
-                EndDate = null,
-                Description = $"You'll have to find your tour elsewhere cause it ain't here.",
-                ApplyDate = DateTimeOffset.Parse("2022-11-26"),
-                RevokeDate = DateTimeOffset.Parse("2022-11-27"),
-                Status = ScheduleAlertStatus.Inactive
+                //StartDate = DateTimeOffset.Parse("2022-10-22"),
+                //EndDate = DateTimeOffset.Parse("2022-11-28"),
+                Description = $"This is an Alert Box Footer to be used for fine print text",
+                //ApplyDate = DateTimeOffset.Parse("2022-10-20"),
+                RevokeDate = DateTimeOffset.Parse("2022-12-30"),
+                Status = ScheduleAlertStatus.Active
             };
 
-            var scheduleManager = new MobileTrolleyTours.Data.ScheduleAlertManager();
-
-            var id = scheduleManager.AddScheduleAlertItem(newScheduleChange);
-
-
-
-            string tableName = "TourScheduleChanges";
-            //bool initialized = MobileTrolleyTours.Data.TableStorageManager.Initialize(tableName);
-
-            string partitionKey = "TourSchedule";
-            string rowKey = "c3795334-adc3-43bb-9f75-9c86e79d8a03";
-            string rowKeyDelete = "NoticeOne";
-
-            List<ScheduleAlertDetails> results = scheduleManager.GetScheduleAlertsByPartitionKey(partitionKey);
-
-            //var test = results.FirstOrDefault();
-
-            //Azure.Data.Tables.TableEntity result = MobileTrolleyTours.Data.TableStorageManager.GetEntityByRowKey(rowKey);
-            //var testTwo = result.FirstOrDefault().Value;
-
-
-
-            //int deleteResult = MobileTrolleyTours.Data.TableStorageManager.DeleteEntityByRowKey(rowKeyDelete);
-
-            //Azure.Data.Tables.TableEntity updateResult = MobileTrolleyTours.Data.TableStorageManager.UpdateEntityByRowKey("");
-
-            string breakpoint = "";
+            //var scheduleService = new MobileTrolleyTours.Data.ScheduleAlertService();
+            //var id = scheduleService.AddScheduleChangeData(PartitionKeys.AlertBoxFooter, newScheduleChange);
         }
     };
 

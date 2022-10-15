@@ -3,15 +3,16 @@ using Azure;
 using Azure.Data.Tables;
 using System.Linq;
 using MobileTrolleyTours.Models;
+using MobileTrolleyTours.Models.Enums;
 
 namespace MobileTrolleyTours.Data
 {
-	public static class TableStorageManager
+	public static class TableStorageService
 	{
         private static AzureStorageConfig _storageConfig;
         private static TableClient _tableClient;
 
-        static TableStorageManager()
+        static TableStorageService()
 		{
             _storageConfig = new AzureStorageConfig();
 		}
@@ -37,9 +38,9 @@ namespace MobileTrolleyTours.Data
             return entity.FirstOrDefault();
         }
 
-        public static Pageable<TableEntity> GetEntitiesByPartitionKey(string partitionKey)
+        public static Pageable<TableEntity> GetEntitiesByPartitionKey(PartitionKeys partitionKey)
         {
-            var entities = _tableClient.Query<TableEntity>(e => e.PartitionKey == partitionKey);
+            var entities = _tableClient.Query<TableEntity>(e => e.PartitionKey == partitionKey.ToString());
 
             return entities;
         }
@@ -97,4 +98,3 @@ namespace MobileTrolleyTours.Data
         }
     }
 }
-

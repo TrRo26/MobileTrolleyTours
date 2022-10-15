@@ -3,24 +3,22 @@ using Azure;
 using Azure.Data.Tables;
 using Microsoft.AspNetCore.Http;
 using MobileTrolleyTours.Models;
+using MobileTrolleyTours.Models.Enums;
 
 namespace MobileTrolleyTours.Data
 {
-	public class ScheduleAlertManager
+	public class ScheduleAlertService
 	{
-        private readonly string PK_ALERT_BANNER = "AlertBanner";
-        private readonly string PK_ALERT_ITEM = "AlertItem";
-
-        public ScheduleAlertManager()
+        public ScheduleAlertService()
 		{
             var storageConfig = new AzureStorageConfig();
-            TableStorageManager.Initialize(storageConfig.TableTourScheduleChanges);
+            TableStorageService.Initialize(storageConfig.TableTourScheduleChanges);
         }
 
-        public List<ScheduleAlertDetails> GetScheduleAlertsByPartitionKey(string partitionKey)
+        public List<ScheduleChangeData> GetScheduleChangeData(PartitionKeys partitionKey, ScheduleAlertStatus? alertStatus = null)
         {
-            var alerts = new List<ScheduleAlertDetails>();
-            var entities = TableStorageManager.GetEntitiesByPartitionKey(partitionKey);
+            var alerts = new List<ScheduleChangeData>();
+            var entities = TableStorageService.GetEntitiesByPartitionKey(partitionKey);
 
             foreach (TableEntity entity in entities)
             {
@@ -31,9 +29,9 @@ namespace MobileTrolleyTours.Data
                 entity.TryGetValue("RevokeDate", out object revokeDate);
                 entity.TryGetValue("Status", out object status);
 
-                var alert = new ScheduleAlertDetails
+                var alert = new ScheduleChangeData
                 {
-                    StartDate = (DateTimeOffset)startDate,
+                    StartDate = startDate != null ? (DateTimeOffset)startDate : null,
                     EndDate = endDate != null ? (DateTimeOffset)endDate : null,
                     Description = description != null ? (string)description : null,
                     ApplyDate = applyDate != null ? (DateTimeOffset)applyDate: null,
@@ -41,29 +39,32 @@ namespace MobileTrolleyTours.Data
                     Status = (ScheduleAlertStatus)status
                 };
 
-                alerts.Add(alert);
+                if (alertStatus == null || alert.Status == alertStatus)
+                {
+                    alerts.Add(alert);
+                }
             }
 
             return alerts;
         }
 
-        public string AddScheduleAlertItem(ScheduleAlertDetails alertDetails)
+        public string AddScheduleChangeData(PartitionKeys partitionKey, ScheduleChangeData changeData)
         {
             var rowKey = Guid.NewGuid().ToString();
 
             try
             {
-                TableEntity entity = new TableEntity(PK_ALERT_ITEM, rowKey)
+                TableEntity entity = new TableEntity(partitionKey.ToString(), rowKey)
                 {
-                    { nameof(alertDetails.StartDate), alertDetails.StartDate },
-                    { nameof(alertDetails.EndDate), alertDetails.EndDate },
-                    { nameof(alertDetails.Description), alertDetails.Description },
-                    { nameof(alertDetails.ApplyDate), alertDetails.ApplyDate },
-                    { nameof(alertDetails.RevokeDate), alertDetails.RevokeDate },
-                    { nameof(alertDetails.Status), (int)alertDetails.Status },
+                    { nameof(changeData.StartDate), changeData.StartDate },
+                    { nameof(changeData.EndDate), changeData.EndDate },
+                    { nameof(changeData.Description), changeData.Description },
+                    { nameof(changeData.ApplyDate), changeData.ApplyDate },
+                    { nameof(changeData.RevokeDate), changeData.RevokeDate },
+                    { nameof(changeData.Status), (int)changeData.Status },
                 };
 
-                TableStorageManager.AddEntity(entity);
+                TableStorageService.AddEntity(entity);
             }
             catch (Exception)
             {

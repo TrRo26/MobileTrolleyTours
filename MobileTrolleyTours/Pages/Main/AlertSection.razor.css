@@ -6,14 +6,17 @@
     margin-top: 30px;
     margin-bottom: -30px;
     border: 1px solid black;
+    border-radius: 4px;
     padding: 15px;
     background-color: indianred;
     font-size: 14px;
 }
 
 .changes > p {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 16px;
-/*    font-weight: bold;*/
+    /*    font-size: 1.15rem;*/
+    /*    font-weight: bold;*/
 }
 
 .changes span {
@@ -22,9 +25,31 @@
 
 .footnote {
     font-size: 14px !important;
-/*    font-weight: 500;*/
+    /*    font-weight: 500;*/
 }
 
 .white-text {
     color: #ffca0b;
+}
+
+th {
+    padding: 4px;
+}
+
+td {
+    border: 1px solid black;
+    padding: 4px;
+}
+
+.alert-box-header {
+}
+
+.alert-box-sub-header {
+}
+
+.alert-box-item {
+}
+
+.alert-box-footer {
+    margin-top: 15px;
 }

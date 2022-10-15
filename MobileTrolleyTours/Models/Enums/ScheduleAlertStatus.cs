@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MobileTrolleyTours.Models
+namespace MobileTrolleyTours.Models.Enums
 {
 	public enum ScheduleAlertStatus
 	{

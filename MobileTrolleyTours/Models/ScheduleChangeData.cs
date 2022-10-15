@@ -1,10 +1,11 @@
 ﻿using System;
 using Azure;
 using Azure.Data.Tables;
+using MobileTrolleyTours.Models.Enums;
 
 namespace MobileTrolleyTours.Models
 {
-	public class ScheduleAlertDetails
+	public class ScheduleChangeData
     {
         public DateTimeOffset? StartDate { get; set; }
         public DateTimeOffset? EndDate { get; set; }
