@@ -13,11 +13,11 @@
             </p>*@
 
             <p class="alert-box-header">
-                @GetAlertBoxHeader().Description;
+                @ScheduleAlertService.GetAlertBoxHeader().Description;
             </p>
 
             <p class="alert-box-sub-header footnote">
-                @GetAlertBoxSubHeader().Description;
+                @ScheduleAlertService.GetAlertBoxSubHeader().Description;
             </p>
 
             <tr>
@@ -27,28 +27,25 @@
             </tr>
 
             @{
-                var alerts = GetActiveAlerts();
+                var alerts = ScheduleAlertService.GetActiveAlerts();
 
                 @foreach (var alert in alerts)
                 {
                     <tr class="alert-box-item">
                         <td>
-                            <p>@String.Format("{0:dddd, MMMM d, yyyy}", alert.StartDate)</p>
+                            @String.Format("{0:dddd, MMMM d, yyyy}", alert.StartDate)
                         </td>
                         <td>
-                            @if (!string.IsNullOrEmpty(alert.EndDate.ToString()))
-                            {
-                                <p>@String.Format("{0:dddd, MMMM d, yyyy}", alert.EndDate)</p>
-                            }
+                            @String.Format("{0:dddd, MMMM d, yyyy}", alert.EndDate)
                         </td>
                         <td>
-                            <p>@alert.Description</p>
+                            @alert.Description
                         </td>
                     </tr>
                 }
 
                 <p class="alert-box-footer footnote">
-                    @GetAlertBoxFooter().Description;
+                    @ScheduleAlertService.GetAlertBoxFooter().Description;
                 </p>
             }
 
@@ -57,35 +54,5 @@
 </div>
 
 @code {
-
-    ScheduleAlertService scheduleManager = new MobileTrolleyTours.Data.ScheduleAlertService();
-
-    public ScheduleChangeData GetAlertBoxHeader()
-    {
-        var alertBoxHeader = scheduleManager.GetScheduleChangeData(PartitionKeys.AlertBoxHeader, ScheduleAlertStatus.Active);
-
-        return alertBoxHeader.FirstOrDefault();
-    }
-
-    public ScheduleChangeData GetAlertBoxSubHeader()
-    {
-        var alertBoxSubHeader = scheduleManager.GetScheduleChangeData(PartitionKeys.AlertBoxSubHeader, ScheduleAlertStatus.Active);
-
-        return alertBoxSubHeader.FirstOrDefault();
-    }
-
-    public List<ScheduleChangeData> GetActiveAlerts()
-    {
-        var alerts = scheduleManager.GetScheduleChangeData(PartitionKeys.AlertBoxItem, ScheduleAlertStatus.Active);
-
-        return alerts;
-    }
-
-    public ScheduleChangeData GetAlertBoxFooter()
-    {
-        var alertBoxFooter = scheduleManager.GetScheduleChangeData(PartitionKeys.AlertBoxFooter, ScheduleAlertStatus.Active);
-
-        return alertBoxFooter.FirstOrDefault();
-    }
 
     }

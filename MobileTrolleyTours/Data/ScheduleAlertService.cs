@@ -7,15 +7,65 @@ using MobileTrolleyTours.Models.Enums;
 
 namespace MobileTrolleyTours.Data
 {
-	public class ScheduleAlertService
+	public static class ScheduleAlertService
 	{
-        public ScheduleAlertService()
+        static ScheduleAlertService()
 		{
             var storageConfig = new AzureStorageConfig();
             TableStorageService.Initialize(storageConfig.TableTourScheduleChanges);
         }
 
-        public List<ScheduleChangeData> GetScheduleChangeData(PartitionKeys partitionKey, ScheduleAlertStatus? alertStatus = null)
+        #region Public Methods
+
+        public static ScheduleChangeData GetAlertBoxHeader()
+        {
+            var alertBoxHeader = GetScheduleChangeData(PartitionKeys.AlertBoxHeader, ScheduleAlertStatus.Active);
+
+            return alertBoxHeader.FirstOrDefault();
+        }
+
+        public static ScheduleChangeData GetAlertBoxSubHeader()
+        {
+            var alertBoxSubHeader = GetScheduleChangeData(PartitionKeys.AlertBoxSubHeader, ScheduleAlertStatus.Active);
+
+            return alertBoxSubHeader.FirstOrDefault();
+        }
+
+        public static List<ScheduleChangeData> GetActiveAlerts()
+        {
+            var alerts = GetScheduleChangeData(PartitionKeys.AlertBoxItem, ScheduleAlertStatus.Active);
+
+            return alerts;
+        }
+
+        public static ScheduleChangeData GetAlertBoxFooter()
+        {
+            var alertBoxFooter = GetScheduleChangeData(PartitionKeys.AlertBoxFooter, ScheduleAlertStatus.Active);
+
+            return alertBoxFooter.FirstOrDefault();
+        }
+
+        public static IOrderedEnumerable<ScheduleChangeData> GetAllAlerts()
+        {
+            var alerts = GetScheduleChangeData(PartitionKeys.AlertBoxItem);
+
+            var sortedAlerts = alerts.OrderByDescending(d => d.StartDate);
+
+            return sortedAlerts;
+        }
+
+        public static string AddAlert(ScheduleChangeData changeData)
+        {
+            var alertKey = AddScheduleChangeData(PartitionKeys.AlertBoxItem, changeData);
+
+            return alertKey;
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private static List<ScheduleChangeData> GetScheduleChangeData(PartitionKeys partitionKey, ScheduleAlertStatus? alertStatus = null)
         {
             var alerts = new List<ScheduleChangeData>();
             var entities = TableStorageService.GetEntitiesByPartitionKey(partitionKey);
@@ -39,7 +89,7 @@ namespace MobileTrolleyTours.Data
                     Status = (ScheduleAlertStatus)status
                 };
 
-                if (alertStatus == null || alert.Status == alertStatus)
+                if ((alertStatus == null || alert.Status == alertStatus) && alert.Status != ScheduleAlertStatus.Deleted)
                 {
                     alerts.Add(alert);
                 }
@@ -48,7 +98,7 @@ namespace MobileTrolleyTours.Data
             return alerts;
         }
 
-        public string AddScheduleChangeData(PartitionKeys partitionKey, ScheduleChangeData changeData)
+        private static string AddScheduleChangeData(PartitionKeys partitionKey, ScheduleChangeData changeData)
         {
             var rowKey = Guid.NewGuid().ToString();
 
@@ -65,6 +115,9 @@ namespace MobileTrolleyTours.Data
                 };
 
                 TableStorageService.AddEntity(entity);
+
+                Console.WriteLine($"Table entity with partition key {partitionKey.ToString()} " +
+                                  $"and row key {rowKey} was added successfully.");
             }
             catch (Exception)
             {
@@ -73,5 +126,7 @@ namespace MobileTrolleyTours.Data
 
             return rowKey;
         }
+
+        #endregion
     }
 }

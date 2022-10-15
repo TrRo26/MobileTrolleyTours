@@ -1,4 +1,5 @@
-﻿@using MobileTrolleyTours.Models.Enums;
+﻿@using MobileTrolleyTours.Data;
+@using MobileTrolleyTours.Models.Enums;
 
 <div class="footer-container">
     <footer class="text-white" style="background-color: #f1f1f1;">
@@ -104,16 +105,15 @@
 
             var newScheduleChange = new ScheduleChangeData
             {
-                //StartDate = DateTimeOffset.Parse("2022-10-22"),
-                //EndDate = DateTimeOffset.Parse("2022-11-28"),
-                Description = $"This is an Alert Box Footer to be used for fine print text",
-                //ApplyDate = DateTimeOffset.Parse("2022-10-20"),
-                RevokeDate = DateTimeOffset.Parse("2022-12-30"),
-                Status = ScheduleAlertStatus.Active
+                StartDate = DateTimeOffset.Parse("2022-04-07"),
+                //EndDate = DateTimeOffset.Parse("2023-01-02"),
+                Description = $"There will be no tours for this date.",
+                //ApplyDate = DateTimeOffset.Parse("2022-06-15"),
+                //RevokeDate = DateTimeOffset.Parse("2022-07-05"),
+                Status = ScheduleAlertStatus.Inactive
             };
 
-            //var scheduleService = new MobileTrolleyTours.Data.ScheduleAlertService();
-            //var id = scheduleService.AddScheduleChangeData(PartitionKeys.AlertBoxFooter, newScheduleChange);
+            //var id = ScheduleAlertService.AddAlert(newScheduleChange);
         }
     };
 
