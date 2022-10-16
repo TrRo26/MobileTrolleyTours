@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using Azure;
 using Azure.Data.Tables;
 using Microsoft.AspNetCore.Http;
@@ -61,6 +62,22 @@ namespace MobileTrolleyTours.Data
             return alertKey;
         }
 
+        public static bool UpdateAlertStatus(ScheduleChangeData changeData)
+        {
+            var result = false;
+
+            try
+            {
+                result = UpdateScheduleChangeDataStatus(changeData);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return result;
+        }
+
         #endregion
 
         #region Private Methods
@@ -72,6 +89,7 @@ namespace MobileTrolleyTours.Data
 
             foreach (TableEntity entity in entities)
             {
+                entity.TryGetValue("RowKey", out object alertId);
                 entity.TryGetValue("StartDate", out object startDate);
                 entity.TryGetValue("EndDate", out object endDate);
                 entity.TryGetValue("Description", out object description);
@@ -81,6 +99,7 @@ namespace MobileTrolleyTours.Data
 
                 var alert = new ScheduleChangeData
                 {
+                    AlertId = new Guid(alertId.ToString()),
                     StartDate = startDate != null ? (DateTimeOffset)startDate : null,
                     EndDate = endDate != null ? (DateTimeOffset)endDate : null,
                     Description = description != null ? (string)description : null,
@@ -126,6 +145,43 @@ namespace MobileTrolleyTours.Data
 
             return rowKey;
         }
+
+        // UPDATE TO ACCEPT ALL PROPS
+        private static bool UpdateScheduleChangeDataStatus(ScheduleChangeData changeData)
+        {
+            var rowKey = changeData.AlertId.ToString();
+
+            TableEntity entity = new TableEntity(PartitionKeys.AlertBoxItem.ToString(), rowKey)
+                {
+                    { nameof(changeData.Status), (int)changeData.Status },
+                };
+
+            try
+            {
+                TableStorageService.UpdateEntityByRowKey(rowKey, entity);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        //private TableEntity MapScheduleChangeDataToTableEntity(ScheduleChangeData changeData)
+        //{
+        //    TableEntity entity = new TableEntity(partitionKey.ToString(), rowKey)
+        //        {
+        //            { nameof(changeData.StartDate), changeData.StartDate },
+        //            { nameof(changeData.EndDate), changeData.EndDate },
+        //            { nameof(changeData.Description), changeData.Description },
+        //            { nameof(changeData.ApplyDate), changeData.ApplyDate },
+        //            { nameof(changeData.RevokeDate), changeData.RevokeDate },
+        //            { nameof(changeData.Status), (int)changeData.Status },
+        //        };
+
+        //    return entity;
+        //}
 
         #endregion
     }
