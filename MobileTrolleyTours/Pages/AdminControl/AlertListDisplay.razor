@@ -1,0 +1,114 @@
+﻿<div class="alert-list-container">
+
+    <tr>
+
+        @if (PartitionKey == PartitionKeys.AlertBoxItem)
+        {
+            <th>Start Date</th>
+            <th>End Date</th>
+        }
+
+        <th>Notice</th>
+        <td class="table-seperator"></td>
+        <th>Date to Apply Alert</th>
+        <th>Date to Hide Alert</th>
+        <th>Alert Status</th>
+    </tr>
+
+    @foreach (var alert in alerts)
+    {
+        string backgroundColor = "none";
+
+        if (alert.Status == ScheduleAlertStatus.Active)
+        {
+            backgroundColor = "lightgreen";
+        }
+        else if (alert.Status == ScheduleAlertStatus.Pending)
+        {
+            backgroundColor = "lightyellow";
+        }
+
+        <tr class="alert-box-item">
+
+            @if (PartitionKey == PartitionKeys.AlertBoxItem)
+            {
+                <td style="background-color:@backgroundColor">
+                    @String.Format("{0:dddd, MMMM d, yyyy}", alert.StartDate)
+                </td>
+                <td style="background-color:@backgroundColor">
+                    @String.Format("{0:dddd, MMMM d, yyyy}", alert.EndDate)
+                </td>
+            }
+
+            <td style="background-color:@backgroundColor">
+                @alert.Description
+            </td>
+            <td class="table-seperator"></td>
+            <td style="background-color:@backgroundColor">
+                @String.Format("{0:dddd, MMMM d, yyyy}", alert.ApplyDate)
+            </td>
+            <td style="background-color:@backgroundColor">
+                @String.Format("{0:dddd, MMMM d, yyyy}", alert.RevokeDate)
+            </td>
+            <td id="@alert.AlertId" style="background-color:@backgroundColor">
+
+                <EditForm Model="@alert">
+                    <InputSelect @bind-Value="@alert.Status" @onchange="@OnStatusUpdate(alert.AlertId, alert.Status)" id="item-list-status" required>
+                        <option value="@ScheduleAlertStatus.Active">Active</option>
+                        <option value="@ScheduleAlertStatus.Pending">Pending</option>
+                        <option value="@ScheduleAlertStatus.Inactive">Inactive</option>
+                        <option value="@ScheduleAlertStatus.Deleted">Delete</option>
+                    </InputSelect>
+                </EditForm>
+
+            </td>
+        </tr>
+
+    }
+
+</div>
+
+@code {
+
+    [Parameter]
+    public PartitionKeys PartitionKey { get; set; }
+
+    // TO-DO: This is currently being called for all alerts on PageLoad resulting
+    // in unneccessary traffic and messing up db timestamps
+    public EventCallback OnStatusUpdate(Guid alertId, ScheduleAlertStatus status)
+    {
+        var updateAlert = new ScheduleChangeData
+        {
+            AlertId = alertId,
+            Status = status
+        };
+
+        try
+        {
+            ScheduleAlertService.UpdateAlertStatus(updateAlert);
+        }
+        catch (Exception)
+        {
+
+        }
+
+        // TO-DO:  Can I use this to update UI (remove deleted alerts)
+        return new EventCallback();
+    }
+
+
+    IOrderedEnumerable<ScheduleChangeData>? alerts;
+    private bool firstRender = true;
+
+    protected override void OnParametersSet()
+    {
+        if (PartitionKey > 0 && firstRender)
+        {
+            alerts = ScheduleAlertService.GetAllAlerts(PartitionKey);
+            firstRender = false;
+
+            StateHasChanged();
+        }
+    }
+
+}

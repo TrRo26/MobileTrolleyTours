@@ -26,11 +26,12 @@
   <ItemGroup>
     <Content Remove="Pages\Main\TourSchedule.css.razor" />
     <Content Remove="wwwroot\images\" />
+    <Content Remove="Pages\AdminControl\AlertListDisplayCSS.razor" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="bootstrap.sass" Version="5.1.3" />
+    <PackageReference Include="bootstrap.sass" Version="5.2.1" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.12.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.14.0" />
     <PackageReference Include="Azure.Data.Tables" Version="12.6.1" />
   </ItemGroup>
   <ItemGroup>

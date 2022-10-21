@@ -96,25 +96,4 @@
 
 @code {
 
-    TestForCodeBlock runClass = new TestForCodeBlock();
-
-    class TestForCodeBlock
-    {
-        public TestForCodeBlock()
-        {
-
-            var newScheduleChange = new ScheduleChangeData
-            {
-                StartDate = DateTimeOffset.Parse("2022-04-07"),
-                //EndDate = DateTimeOffset.Parse("2023-01-02"),
-                Description = $"There will be no tours for this date.",
-                //ApplyDate = DateTimeOffset.Parse("2022-06-15"),
-                //RevokeDate = DateTimeOffset.Parse("2022-07-05"),
-                Status = ScheduleAlertStatus.Inactive
-            };
-
-            //var id = ScheduleAlertService.AddAlert(newScheduleChange);
-        }
-    };
-
 }

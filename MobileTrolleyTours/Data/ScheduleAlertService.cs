@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.ComponentModel;
+using System.Net.NetworkInformation;
 using Azure;
 using Azure.Data.Tables;
 using Microsoft.AspNetCore.Http;
@@ -46,18 +48,18 @@ namespace MobileTrolleyTours.Data
             return alertBoxFooter.FirstOrDefault();
         }
 
-        public static IOrderedEnumerable<ScheduleChangeData> GetAllAlerts()
+        public static IOrderedEnumerable<ScheduleChangeData> GetAllAlerts(PartitionKeys partitionKey)
         {
-            var alerts = GetScheduleChangeData(PartitionKeys.AlertBoxItem);
+            var alerts = GetScheduleChangeData(partitionKey);
 
             var sortedAlerts = alerts.OrderByDescending(d => d.StartDate);
 
             return sortedAlerts;
         }
 
-        public static string AddAlert(ScheduleChangeData changeData)
+        public static string AddAlert(PartitionKeys partitionKey, ScheduleChangeData changeData)
         {
-            var alertKey = AddScheduleChangeData(PartitionKeys.AlertBoxItem, changeData);
+            var alertKey = AddScheduleChangeData(partitionKey, changeData);
 
             return alertKey;
         }
@@ -113,6 +115,8 @@ namespace MobileTrolleyTours.Data
                     alerts.Add(alert);
                 }
             }
+
+            AutoUpdateStatus(alerts);
 
             return alerts;
         }
@@ -182,6 +186,31 @@ namespace MobileTrolleyTours.Data
 
         //    return entity;
         //}
+
+        // TO-DO: Need to add "ref"?
+        private static void AutoUpdateStatus(List<ScheduleChangeData> alerts)
+        {
+            var alertsToUpdate = alerts.Where(a => a.ApplyDate != null &&
+                                                  (a.ApplyDate <= DateTime.Now && a.Status == ScheduleAlertStatus.Pending ||
+                                                   a.RevokeDate <= DateTime.Now && a.Status == ScheduleAlertStatus.Active));
+
+            foreach (var alert in alertsToUpdate)
+            {
+                alert.Status = alert.Status == ScheduleAlertStatus.Pending ?
+                                               ScheduleAlertStatus.Active :
+                                               ScheduleAlertStatus.Inactive;
+
+                try
+                {
+                    UpdateScheduleChangeDataStatus(alert);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"There was an error while attempting to update " +
+                        $"the Status for rowKey {alert.AlertId} of status {alert.Status}. Message: {ex.Message}");
+                }
+            }
+        }
 
         #endregion
     }
