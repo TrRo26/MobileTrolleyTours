@@ -7,6 +7,7 @@ namespace MobileTrolleyTours.Models
 {
 	public class ScheduleChangeData
     {
+        public PartitionKeys PartitionKey { get; set; }
         public Guid AlertId { get; set; }
         public DateTimeOffset? StartDate { get; set; }
         public DateTimeOffset? EndDate { get; set; }

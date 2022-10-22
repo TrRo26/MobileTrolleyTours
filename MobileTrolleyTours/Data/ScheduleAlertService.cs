@@ -154,8 +154,9 @@ namespace MobileTrolleyTours.Data
         private static bool UpdateScheduleChangeDataStatus(ScheduleChangeData changeData)
         {
             var rowKey = changeData.AlertId.ToString();
+            var patitionKey = changeData.PartitionKey.ToString();
 
-            TableEntity entity = new TableEntity(PartitionKeys.AlertBoxItem.ToString(), rowKey)
+            TableEntity entity = new TableEntity(patitionKey, rowKey)
                 {
                     { nameof(changeData.Status), (int)changeData.Status },
                 };
