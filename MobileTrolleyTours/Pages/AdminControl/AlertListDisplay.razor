@@ -66,12 +66,23 @@
 
     }
 
+    <div id="button-container" class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button @onclick="e => this.Collapsed = !this.Collapsed" class="btn-add-new-alert btn btn-sm shadow-none">
+            @( this.Collapsed ? "Add New Alert" : "Cancel")
+        </button>
+    </div>
+
+    <AlertAddDisplay PartitionKey="@PartitionKey" Collapse="@( this.Collapsed ? "collapse": "")" />
+
+
 </div>
 
 @code {
 
     [Parameter]
     public PartitionKeys PartitionKey { get; set; }
+
+    private bool Collapsed = true;
 
     // TO-DO: This is currently being called for all alerts on PageLoad resulting
     // in unneccessary traffic and messing up db timestamps
@@ -96,7 +107,6 @@
         // TO-DO:  Can I use this to update UI (remove deleted alerts)
         return new EventCallback();
     }
-
 
     IOrderedEnumerable<ScheduleChangeData>? alerts;
     private bool firstRender = true;

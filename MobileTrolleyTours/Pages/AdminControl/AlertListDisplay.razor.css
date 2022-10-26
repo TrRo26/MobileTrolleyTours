@@ -43,3 +43,24 @@ form {
 .status {
     display: inline-block;
 }
+
+.btn-add-new-alert {
+    margin-top: 10px;
+}
+
+.button {
+    border: 1px solid #1a4954;
+    color: white;
+}
+
+#button-container button {
+    height: 70%;
+    text-transform: uppercase !important;
+    border: 1px solid #1a4954;
+    color: #1a4954;
+}
+
+    #button-container button:hover {
+        background-color: #1a4954;
+        color: white;
+    }

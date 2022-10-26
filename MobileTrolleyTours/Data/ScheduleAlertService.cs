@@ -24,34 +24,53 @@ namespace MobileTrolleyTours.Data
         {
             var alertBoxHeader = GetScheduleChangeData(PartitionKeys.AlertBoxHeader, ScheduleAlertStatus.Active);
 
-            return alertBoxHeader.FirstOrDefault();
+            if (alertBoxHeader.Any())
+            {
+                return alertBoxHeader.FirstOrDefault();
+            }
+
+            return new ScheduleChangeData();
         }
 
         public static ScheduleChangeData GetAlertBoxSubHeader()
         {
             var alertBoxSubHeader = GetScheduleChangeData(PartitionKeys.AlertBoxSubHeader, ScheduleAlertStatus.Active);
 
-            return alertBoxSubHeader.FirstOrDefault();
+            if (alertBoxSubHeader.Any())
+            {
+                return alertBoxSubHeader.FirstOrDefault();
+            }
+
+            return new ScheduleChangeData();
         }
 
         public static List<ScheduleChangeData> GetActiveAlerts()
         {
             var alerts = GetScheduleChangeData(PartitionKeys.AlertBoxItem, ScheduleAlertStatus.Active);
 
-            return alerts;
+            if (alerts.Any())
+            {
+                return alerts;
+            }
+
+            return new List<ScheduleChangeData>();
         }
 
         public static ScheduleChangeData GetAlertBoxFooter()
         {
             var alertBoxFooter = GetScheduleChangeData(PartitionKeys.AlertBoxFooter, ScheduleAlertStatus.Active);
 
-            return alertBoxFooter.FirstOrDefault();
+            if (alertBoxFooter.Any())
+            {
+                return alertBoxFooter.FirstOrDefault();
+            }
+
+            return new ScheduleChangeData();
         }
 
         public static IOrderedEnumerable<ScheduleChangeData> GetAllAlerts(PartitionKeys partitionKey)
         {
             var alerts = GetScheduleChangeData(partitionKey);
-
             var sortedAlerts = alerts.OrderByDescending(d => d.StartDate);
 
             return sortedAlerts;
@@ -104,7 +123,7 @@ namespace MobileTrolleyTours.Data
                     AlertId = new Guid(alertId.ToString()),
                     StartDate = startDate != null ? (DateTimeOffset)startDate : null,
                     EndDate = endDate != null ? (DateTimeOffset)endDate : null,
-                    Description = description != null ? (string)description : null,
+                    Description = description != null ? (string)description : String.Empty,
                     ApplyDate = applyDate != null ? (DateTimeOffset)applyDate: null,
                     RevokeDate = revokeDate != null ? (DateTimeOffset)revokeDate: null,
                     Status = (ScheduleAlertStatus)status

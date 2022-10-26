@@ -1,4 +1,4 @@
-﻿<div class="alert-add-container">
+﻿<div class="alert-add-container @Collapse">
 
     @if (messageToUser != null)
     {
@@ -7,45 +7,48 @@
         </h6>
     }
 
-    <EditForm Model="@newAlert" OnValidSubmit=@ValidNewAlertFormSubmitted OnInvalidSubmit=@InvalidNewAlertFormSubmitted>
+    <div class="content">
 
-        @if (PartitionKey == PartitionKeys.AlertBoxItem)
-        {
-            <div class="start-date">
-                <label for="startDate">Start Date*:</label>
-                <InputDate TValue="DateTimeOffset?" @bind-Value="@newAlert.StartDate" class="alert-add-startDate" required />
+        <EditForm Model="@newAlert" OnValidSubmit=@ValidNewAlertFormSubmitted OnInvalidSubmit=@InvalidNewAlertFormSubmitted>
+
+            @if (PartitionKey == PartitionKeys.AlertBoxItem)
+            {
+                <div class="start-date">
+                    <label for="startDate">Start Date*:</label>
+                    <InputDate TValue="DateTimeOffset?" @bind-Value="@newAlert.StartDate" class="alert-add-startDate" required />
+                </div>
+                <div class="end-date">
+                    <label for="endDate">End Date:</label>
+                    <InputDate TValue="DateTimeOffset?" @bind-Value="@newAlert.EndDate" class="alert-add-endDate" />
+                </div>
+            }
+
+            <div class="description">
+                <label for="description">Notice*:</label>
+                <InputTextArea @bind-Value="@newAlert.Description" class="alert-add-description" required />
             </div>
-            <div class="end-date">
-                <label for="endDate">End Date:</label>
-                <InputDate TValue="DateTimeOffset?" @bind-Value="@newAlert.EndDate" class="alert-add-endDate" />
+            <div class="apply-date">
+                <label for="applyate">Date to Apply Notice:</label>
+                <InputDate TValue="DateTimeOffset?" @bind-Value="@newAlert.ApplyDate" class="alert-add-applyDate" />
             </div>
-        }
+            <div class="revoke-date">
+                <label for="revokeDate">Date to Hide Notice:</label>
+                <InputDate TValue="DateTimeOffset?" @bind-Value="@newAlert.RevokeDate" class="alert-add-revokeDate" />
+            </div>
+            <div class="status">
+                <label for="status">Status*:</label>
+                <InputSelect @bind-Value="@newAlert.Status" class="alert-add-status" required>
+                    <option value="@ScheduleAlertStatus.Active">Active</option>
+                    <option value="@ScheduleAlertStatus.Pending">Pending</option>
+                    <option value="@ScheduleAlertStatus.Inactive">Inactive</option>
+                </InputSelect>
+            </div>
+            <div class="">
+                <input type="submit" value="Add Alert">
+            </div>
 
-        <div class="description">
-            <label for="description">Notice*:</label>
-            <InputTextArea @bind-Value="@newAlert.Description" class="alert-add-description" required />
-        </div>
-        <div class="apply-date">
-            <label for="applyate">Date to Apply Notice:</label>
-            <InputDate TValue="DateTimeOffset?" @bind-Value="@newAlert.ApplyDate" class="alert-add-applyDate" />
-        </div>
-        <div class="revoke-date">
-            <label for="revokeDate">Date to Hide Notice:</label>
-            <InputDate TValue="DateTimeOffset?" @bind-Value="@newAlert.RevokeDate" class="alert-add-revokeDate" />
-        </div>
-        <div class="status">
-            <label for="status">Status*:</label>
-            <InputSelect @bind-Value="@newAlert.Status" class="alert-add-status" required>
-                <option value="@ScheduleAlertStatus.Active">Active</option>
-                <option value="@ScheduleAlertStatus.Pending">Pending</option>
-                <option value="@ScheduleAlertStatus.Inactive">Inactive</option>
-            </InputSelect>
-        </div>
-        <div class="">
-            <input type="submit" value="Add Alert">
-        </div>
-
-    </EditForm>
+        </EditForm>
+    </div>
 
 </div>
 
@@ -53,14 +56,17 @@
 
     [Parameter]
     public PartitionKeys PartitionKey { get; set; }
+    [Parameter]
+    public string Collapse { get; set; } = "collapse";
+
     private string messageToUser = null;
 
     ScheduleChangeData newAlert = new ScheduleChangeData
     {
-        StartDate = DateTimeOffset.Now,
-        EndDate = DateTimeOffset.Now,
-        ApplyDate = DateTimeOffset.Now,
-        RevokeDate = DateTimeOffset.Now
+        StartDate = null,
+        EndDate = null,
+        ApplyDate = null,
+        RevokeDate = null
     };
 
     public void ValidNewAlertFormSubmitted()
