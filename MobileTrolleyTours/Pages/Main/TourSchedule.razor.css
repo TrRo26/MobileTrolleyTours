@@ -12,8 +12,13 @@ table-header {
     background-color: #1a4954 !important;
 }
 
+td[label="Battleship"] {
+    border-left: 1px solid black;
+}
+
 @media screen and (max-width: 576px) {
     .component-wrapper {
+
         padding-top: 20px;
     }
 
